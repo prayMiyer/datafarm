@@ -1,0 +1,40 @@
+.service-icons-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4열 그리드 */
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.icon-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.2s ease;
+  cursor: pointer;
+}
+
+.icon-item:hover {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.icon-emoji {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.icon-text {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #555;
+}
+
+/* 모바일 화면에서는 2열로 변경 */
+@media (max-width: 500px) {
+  .service-icons-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

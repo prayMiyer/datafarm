@@ -7,7 +7,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <App /> // App 컴포넌트만 감싸줍니다.
+      <App /> 
     </BrowserRouter>
   </React.StrictMode>
 );

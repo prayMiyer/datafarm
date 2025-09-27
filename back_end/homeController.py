@@ -6,7 +6,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, EmailStr
 
 from users.userDAO import UsersDAO
-
+from cropRd.cropRd import get_recommendations
 
 # ===== JSON Body Models =====
 class EmailIn(BaseModel):
@@ -68,6 +68,11 @@ async def signup_route(
 @app.post("/users/login")
 def login_route(body: LoginIn = Body(...)):
     return uDAO.login(body.email, body.password)
+
+# === 농작물 추천 엔드포인트 ===
+@app.get("/api/recommend-crop")
+def recommend_crop_route(location: str):
+    return get_recommendations(location)
 
 if __name__ == "__main__":
     uvicorn.run("homeController:app", host="0.0.0.0", port=1234, reload=True)

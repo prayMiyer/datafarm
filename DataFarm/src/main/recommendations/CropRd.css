@@ -1,0 +1,129 @@
+/* 전체 컨테이너 스타일 */
+.crop-recommendation-container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 24px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+/* 제목 스타일 */
+.crop-recommendation-container h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #2c3e50;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+/* 설명 문구 스타일 */
+.crop-recommendation-container p {
+  font-size: 1rem;
+  color: #7f8c8d;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* 입력 그룹 (input과 button) 스타일 */
+.input-group {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+/* 입력 필드 스타일 */
+.input-group input {
+  flex-grow: 1;
+  padding: 12px;
+  font-size: 1rem;
+  border: 1px solid #bdc3c7;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.2s ease-in-out;
+}
+
+.input-group input:focus {
+  border-color: #2980b9;
+}
+
+/* 버튼 스타일 */
+.input-group button {
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fff;
+  background-color: #27ae60;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.input-group button:hover {
+  background-color: #219d53;
+}
+
+.input-group button:disabled {
+  background-color: #bdc3c7;
+  cursor: not-allowed;
+}
+
+/* 추천 목록 스타일 */
+.recommendations-list {
+  background-color: #ecf0f1;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.recommendations-list h3 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.recommendations-list ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.recommended-crop-item {
+  display: flex; /* 항목 내의 요소를 가로로 정렬 */
+  align-items: center; /* 세로 중앙 정렬 */
+  background-color: #ffffff;
+  padding: 12px;
+  margin-bottom: 8px;
+  border-radius: 6px;
+  border-left: 4px solid #3498db;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.crop-info {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* 이미지와 텍스트 사이 간격 */
+}
+
+.crop-image {
+  width: 80px; /* 이미지 크기 조정 */
+  height: 80px;
+  border-radius: 8px; /* 둥근 모서리 */
+  object-fit: cover; /* 이미지 비율 유지 */
+}
+
+.crop-name {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #2c3e50;
+  margin: 0;
+}
+
+.crop-analysis {
+  font-size: 0.9rem;
+  color: #555;
+  margin: 0;
+}

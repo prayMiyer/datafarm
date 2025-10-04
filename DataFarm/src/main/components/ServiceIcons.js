@@ -2,10 +2,10 @@ import { useNavigate } from 'react-router-dom';
 import './ServiceIcons.css'; // CSS 파일을 불러옵니다.
 
 const icons = [
-  { name: '판매하기', icon: '📝' },
-  { name: '내 근처', icon: '📍' },
-  { name: '내 활동', icon: '👤' },
-  { name: '농작물 추천', icon: '🔍', path: '/croprecommendation' }, // 경로를 추가했습니다.
+  { name: '거래', icon: '📝' },
+  { name: '내 정보', icon: '📍' },
+  { name: '내 활동', icon: '👤' , path: '/myactivity'},
+  { name: '농작물 추천', icon: '🔍', path: '/croprecommendation' }, 
 ];
 
 const ServiceIcons = () => {

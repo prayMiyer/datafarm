@@ -7,6 +7,7 @@ from pydantic import BaseModel, EmailStr
 
 from users.userDAO import UsersDAO
 from cropRd.cropRd import get_recommendations
+from produceLogDAO.produceLogDAO import ProduceLogDAO
 
 # ===== JSON Body Models =====
 class EmailIn(BaseModel):
@@ -19,7 +20,11 @@ class OtpIn(BaseModel):
 class LoginIn(BaseModel):
     email: EmailStr
     password: str
-
+class ProduceLogIn(BaseModel):
+    userId: int
+    cropName: str
+    quantity: float
+    productionDate: str # "YYYY-MM-DD" 형식
 
 app = FastAPI()
 app.add_middleware(
@@ -31,6 +36,7 @@ app.add_middleware(
 )
 
 uDAO = UsersDAO()
+pDAO = ProduceLogDAO()
 
 # === OTP 전송(JSON) ===
 @app.post("/users/auth-email")
@@ -73,6 +79,25 @@ def login_route(body: LoginIn = Body(...)):
 @app.get("/api/recommend-crop")
 def recommend_crop_route(location: str):
     return get_recommendations(location)
+
+#  produceLogDAO 기능
+@app.get("/api/produce-logs", summary="특정 사용자의 모든 생산량 기록 조회")
+def get_produce_logs(user_id: int):
+    return pDAO.get_logs(user_id)
+
+@app.post("/api/produce-logs", summary="새 생산량 기록 추가")
+def add_produce_log(body: ProduceLogIn = Body(...)):
+    return pDAO.add_log(
+        user_id=body.userId,
+        crop_name=body.cropName,
+        quantity=body.quantity,
+        production_date=body.productionDate
+    )
+
+@app.delete("/api/produce-logs/{log_id}", summary="생산량 기록 삭제")
+def delete_produce_log(log_id: int):
+    return pDAO.delete_log(log_id)
+
 
 if __name__ == "__main__":
     uvicorn.run("homeController:app", host="0.0.0.0", port=1234, reload=True)

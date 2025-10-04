@@ -5,7 +5,9 @@ import LoginPage from './main/account/loginPage';
 import SignUP from './main/account/signUP';
 import Navbar from './main/components/Navbar';
 import Main from './main/main';
+import MyActivity from './main/MyActivity/myactivity';
 import CropRd from './main/recommendations/CropRd';
+
 
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -36,6 +38,7 @@ const App = () => {
         <Route path="/signUP" element={<SignUP />} />
 
         <Route path="/croprecommendation" element={<CropRd />} />
+        <Route path="/myactivity" element={<MyActivity />} />
       </Routes>
     </>
   );

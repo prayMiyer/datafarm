@@ -1,0 +1,92 @@
+/* --- 전체 페이지 --- */
+.my-activity-container {
+  margin: 20px;
+  background-color: #FAF8F1; /* 페이지 전체 배경은 크림색 */
+  color: #334443; /* 기본 텍스트 색상은 가장 어두운 색 */
+  border-radius: 8px; /* 전체적인 통일감을 위해 추가 */
+  padding: 20px;
+}
+
+/* --- 헤더 --- */
+.page-header {
+  margin-bottom: 30px;
+}
+.page-title {
+  font-weight: bold;
+  color: #334443; /* 제목은 가장 어두운 색으로 강조 */
+}
+.page-subtitle {
+  color: #34656D; /* 부제목은 청록색으로 포인트 */
+}
+
+/* --- 메인 컨테이너 --- */
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+/* --- 왼쪽 사이드바 --- */
+.sidebar {
+  flex: 1 1 25%;
+  background-color: #34656D; /* 사이드바 배경은 짙은 청록색 */
+  padding: 20px;
+  border-radius: 4px;
+  color: #FAF8F1; /* 사이드바 내부 텍스트는 밝은 크림색 */
+}
+.sidebar .MuiInputLabel-root, 
+.sidebar .MuiInputBase-input {
+  color: #FAF8F1; /* 입력 필드 라벨과 텍스트 색상 */
+}
+.sidebar .MuiOutlinedInput-notchedOutline {
+  border-color: rgba(250, 248, 241, 0.5); /* 입력 필드 테두리 */
+}
+
+/* --- 사이드바 내부 요소 --- */
+.selected-date-text {
+  margin-top: 20px;
+  font-weight: 500;
+}
+.save-button {
+  margin-top: 20px;
+  padding: 12px;
+  font-weight: bold;
+  background-color: #FAEAB1; /* 저장 버튼은 옅은 노란색으로 강조 */
+  color: #334443; /* 버튼 텍스트는 어두운 색으로 */
+}
+.save-button:hover {
+  background-color: #f8e29a; /* 호버 시 약간 더 진하게 */
+}
+
+/* --- 이벤트 목록 --- */
+.event-list-title {
+  margin-top: 30px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(250, 248, 241, 0.5);
+}
+.event-list-item {
+  background-color: transparent;
+  border: 1px solid #FAEAB1; /* 이벤트 아이템은 노란색 테두리로 */
+  margin: 10px 0;
+  border-radius: 4px;
+  color: #FAF8F1;
+}
+
+/* --- 오른쪽 캘린더 --- */
+.calendar-container {
+  flex: 1 1 100%;
+  margin-left: 20px;
+}
+.calendar-container .fc {
+  color: #334443; /* 캘린더 내부 텍스트 */
+}
+.calendar-container .fc .fc-toolbar-title {
+  color: #334443;
+}
+.calendar-container .fc .fc-button-primary {
+  background-color: #34656D; /* 캘린더 버튼은 청록색 */
+  border-color: #34656D;
+}
+.calendar-container .fc .fc-daygrid-day.fc-day-today {
+  background-color: rgba(250, 234, 177, 0.4); /* 오늘 날짜는 투명한 노란색 */
+}

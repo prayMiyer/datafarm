@@ -4,7 +4,7 @@ import os
 # 날씨 API 키를 환경 변수에서 가져옵니다.
 WEATHER_API_KEY = os.environ.get("WEATHER_API_KEY")
 
-# ✅ 주요 도시의 위도/경도 데이터
+#  주요 도시의 위도/경도 데이터
 locations = {
     '서울': {'lat': 37.5665, 'lon': 126.9780},
     '부산': {'lat': 35.1796, 'lon': 129.0756},
@@ -12,7 +12,7 @@ locations = {
     '제주': {'lat': 33.4996, 'lon': 126.5312},
 }
 
-# ✅ 농작물 데이터 (생육 최적 조건)
+#  농작물 데이터 (생육 최적 조건)
 crop_data = {
     '서울': {
         '쌀': {'optimal_temp': [15, 25], 'optimal_rain': [50, 100]},
@@ -32,7 +32,7 @@ crop_data = {
     },
 }
 
-# ✅ OpenWeatherMap API에서 실시간 날씨 데이터 가져오기
+#  OpenWeatherMap API에서 실시간 날씨 데이터 가져오기
 def get_weather_data(lat: float, lon: float):
     try:
         url = f"https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={WEATHER_API_KEY}&units=metric"
@@ -48,7 +48,7 @@ def get_weather_data(lat: float, lon: float):
         print(f"날씨 API 호출 실패: {e}")
         return None
 
-# ✅ 농작물 추천 함수
+#  농작물 추천 함수
 def get_recommendations(location: str):
     location_coords = locations.get(location)
     if not location_coords:
